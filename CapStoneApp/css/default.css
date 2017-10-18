@@ -1,5 +1,23 @@
-﻿body {
-  /* Uncomment this to enable scrolling and zooming
-  touch-action: manipulation;
-  */
+﻿html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    background-color: #CD8D0C;
+}
+
+.header-nav, .header-nav li {
+    display: inline-block;
+}
+
+.header-nav a, #logo {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
 }

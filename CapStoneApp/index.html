@@ -3,10 +3,100 @@
 <head>
     <meta charset="utf-8" />
     <title>CapStoneApp</title>
+    <link href="css/meyer-reset.css" rel="stylesheet" />
+    <link href="css/float-grid.css" rel="stylesheet" />
     <link href="css/default.css" rel="stylesheet" />
+    <link href="css/signup.css" rel="stylesheet" />
+    <link href="css/login.css" rel="stylesheet" />
 </head>
 <body>
-    <div>Content goes here!</div>
-    <script src="js/main.js"></script>
+    <header role="banner" class="header row">
+        <div class="col-12">
+            <a id="logo" href="/homepage" title="go to home page"><img src="images/logo-img.png" height="50" width="50" alt="game controller logo" /></a>
+            <nav role="navigation" class="header-nav">
+                <ul>
+                    <li><a href="/games">Games</a></li>
+                    <li><a href="/store">Store</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/account">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="home-page">
+
+    </section>
+
+    <section class="game-page">
+
+    </section>
+
+    <section class="store-page">
+
+    </section>
+
+    <section class="news-page">
+
+    </section>
+
+    <section class="account-page">
+
+    </section>
+
+    <section class="signup-page hidden">
+        <header role="banner" class="signup-header row">
+            <div class="col-12">
+                <img class="logo-img" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.5.2_challenge_signup_form/logo.png" alt="App logo" />
+            </div>
+        </header>
+        <main role="main" class="signup-form row">
+            <form class="col-12" method="post" action="/signup/">
+                <h1>Sign Up</h1>
+                <div class="signup-input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required placeholder="name@email.com" />
+                </div>
+                <div class="signup-input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required placeholder="1234passw0rd" />
+                </div>
+                <div class="signup-button">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        </main>
+        <footer role="contentinfo" class="signup-footer row">
+            <div class="col-12">
+                <p>Already have an account? <a href="/login">Log In</a></p>
+            </div>
+        </footer>
+    </section>
+
+    <section class="login-page hidden">
+        <header role="banner" class="login-header row">
+            <div class="col-12">
+                <img class="logo-img" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.5.2_challenge_signup_form/logo.png" alt="App logo" />
+            </div>
+        </header>
+        <main role="main" class="login-form row">
+            <form class="col-12" method="post" action="/signup/">
+                <h1>Log In</h1>
+                <div class="login-input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required placeholder="name@email.com" />
+                </div>
+                <div class="login-input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required placeholder="1234passw0rd" />
+                </div>
+                <div class="login-button">
+                    <button type="submit">Log In</button>
+                </div>
+            </form>
+        </main>
+    </section>
+
+<script src="js/main.js"></script>
 </body>
 </html>
