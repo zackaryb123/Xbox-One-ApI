@@ -4,20 +4,58 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: #666666;
 }
 
-header {
-    background-color: #CD8D0C;
+.header {
+    position: relative;
 }
-
-.header-nav, .header-nav li {
+ 
+.logo {
     display: inline-block;
+    position: relative;
+    height: 75px;
+    width: 100%;
 }
 
-.header-nav a, #logo {
-    text-decoration: none;
+.logo a {
+    font-size: 0px;
 }
 
+.logo-img {
+    height: 100%;
+    width: 100%;
+}
+
+.main-nav, .main-nav ul {
+    height: 60%;
+}
+
+.main-nav ul {
+    height: 100%;
+}
+
+.main-nav li {
+    height: 20%;
+}
+
+.user-account {
+    height: 100%;
+}
+
+main {
+    margin-left: 15%;
+    width: 85%;
+    height: 100%;
+}
+.home-page {
+    width: 100%;
+    height: 100%;
+}
+
+.home-page .row {
+    height: 100%;
+}
 .hidden {
     display: none;
 }

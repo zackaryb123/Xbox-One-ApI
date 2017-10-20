@@ -1,22 +1,13 @@
 ﻿.login-page {
-    background-color: #3f94e7;
+    background-color: #666666;
     height: 100%;
-}
-
-
-.login-header {
-    padding: 20px;
-    text-align: center;
-}
-
-.logo-img {
-    height: 35px;
 }
 
 .login-form {
     background-color: white;
     padding: 60px 40px;
     width: 400px;
+    height: 95%;
 }
 
 .login-form,
