@@ -58,10 +58,12 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\float-grid.css" />
+    <Content Include="css\home-page.css" />
+    <Content Include="css\games.css" />
     <Content Include="css\login.css" />
     <Content Include="css\meyer-reset.css" />
     <Content Include="css\signup.css" />
+    <Content Include="css\store.css" />
     <Content Include="images\logo-img.png" />
     <Content Include="index.html" />
     <Content Include="images\LockScreenLogo.scale-200.png" />
