@@ -1,12 +1,13 @@
 ﻿.signup-page {
     background-color: #666666;
     height: 100%;
+    padding-top: 20px;
 }
 
 .signup-form {
     background-color: white;
     padding: 60px 40px;
-    width: 400px;
+    width: 80%;
     height: 95%;
 }
 
@@ -23,7 +24,7 @@
 
 .signup-input {
     margin-bottom: 20px;
-    width: 320px;
+    width: 100%;
 }
 
 .signup-input label {
@@ -41,6 +42,12 @@
 .signup-input input {
     border: 2px solid #E5E5E5;
     background-color: #FCFCFC;
+}
+
+.signup-button {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
 }
 
 .signup-button button {

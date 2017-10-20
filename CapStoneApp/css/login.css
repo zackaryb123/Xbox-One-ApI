@@ -1,12 +1,13 @@
 ﻿.login-page {
     background-color: #666666;
     height: 100%;
+    padding-top: 20px;
 }
 
 .login-form {
     background-color: white;
     padding: 60px 40px;
-    width: 400px;
+    width: 80%;
     height: 95%;
 }
 
@@ -23,7 +24,7 @@
 
 .login-input {
     margin-bottom: 20px;
-    width: 320px;
+    width: 100%;
 }
 
 .login-input label {
@@ -41,6 +42,12 @@
 .login-input input {
     border: 2px solid #E5E5E5;
     background-color: #FCFCFC;
+}
+
+.login-button {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
 }
 
 .login-button button {

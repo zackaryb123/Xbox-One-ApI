@@ -33,7 +33,8 @@
     }
 
 .col-3, .col-4, .col-6, .col-12, 
-.col-game, .col-profile-store, .col-news {
+.col-game, .col-profile-store, .col-news,
+.col-sign-up-in {
     float: left;
     /* Gutters:
    * Each column is padded by half-a-gutter on each side,
@@ -52,6 +53,12 @@
 */
 .col-3, .col-4, .col-6, .col-12 {
     width: 100%;
+}
+
+.col-sign-up-in {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .col-nav {
@@ -77,10 +84,15 @@
         height: 100%;
     }
 
-    .col-game, .col-news {
+    /*.col-game, .col-news {
         width: 20%;
         height: 100%;
-    }
+    }*/
+
+    /*.col-sign-up-in {
+        width: 100%;
+        height: 100%;
+    } */
 
     /* 3 columns */
     .col-3 {
