@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>CapStoneApp</title>
@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <section class="home-page hidden">
+    <section class="home-page" visible>
         <div class="col-game">
             Games
         </div>
@@ -61,7 +61,7 @@
     </section>
 
     <main role="main">
-        <section class="games-page hidden">
+        <section class="games-page" hidden>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,88 +140,41 @@
             </div>
         </section>
 
-        <section class="store-page hidden">
+        <section class="store-page" hidden>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Search the Store</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2 js-query" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
             </nav>
-            <!-- Main jumbotron for a primary marketing message or call to action -->
             <div role="main" class="container">
-
                 <div class="row row-offcanvas row-offcanvas-right">
-
                     <div class="col-12 col-md-9">
                         <p class="float-right d-md-none">
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
                         </p>
                         <div class="jumbotron">
-                            <h1>Hello, world!</h1>
-                            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+                            <h1>Search for Games!</h1>
+                            <p>View the store to find gamess you currently own and view your stats or add games to your wish list.</p>
                         </div>
-                        <div class="row">
-                            <div class="col-6 col-lg-4">
+                        <div class="row js-search-results">
+                        <!-- <div class="col-6 col-lg-4">
                                 <h2>Heading</h2>
                                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
                                 <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-                            </div><!--/span-->
-                            <div class="col-6 col-lg-4">
-                                <h2>Heading</h2>
-                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-                            </div><!--/span-->
-                            <div class="col-6 col-lg-4">
-                                <h2>Heading</h2>
-                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-                            </div><!--/span-->
-                            <div class="col-6 col-lg-4">
-                                <h2>Heading</h2>
-                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-                            </div><!--/span-->
-                            <div class="col-6 col-lg-4">
-                                <h2>Heading</h2>
-                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-                            </div><!--/span-->
-                            <div class="col-6 col-lg-4">
-                                <h2>Heading</h2>
-                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                                <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-                            </div><!--/span-->
-                        </div><!--/row-->
-                    </div><!--/span-->
+                            </div> -->
+                        </div>
+                    </div>
 
                     <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
-                        <div class="list-group">
+                        <div class="list-group store-fixed">
                             <a href="#" class="list-group-item active">Link</a>
                             <a href="#" class="list-group-item">Link</a>
                             <a href="#" class="list-group-item">Link</a>
@@ -235,27 +188,21 @@
                         </div>
                     </div><!--/span-->
                 </div><!--/row-->
-
                 <hr>
-
             </div>
         </section>
 
-        <section class="profile-page">
+        <section class="profile-page" hidden>
 
         </section>
 
-        <section class="news-page">
-
-        </section>
-
-        <section class="account-page">
+        <section class="news-page" hidden>
 
         </section>
 
     </main>
 
-    <section class="login-page hidden">
+    <section class="login-page" hidden>
         <div waid71fa0d88-5390-4b5b-a2f4-e45fa93d85e2="SA password protect entry checker" cz-shortcut-listen="true">
             <div class="container">
                 <form class="form-signin">
@@ -275,7 +222,7 @@
         </div>
     </section>
 
-    <section class="signup-page hidden">
+    <section class="signup-page" hidden>
         <div waid71fa0d88-5390-4b5b-a2f4-e45fa93d85e2="SA password protect entry checker" cz-shortcut-listen="true">
             <div class="container">
                 <form class="form-signin">
@@ -295,9 +242,11 @@
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>      
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/store-api-handler.js"></script>
+    <script src="js/news-api-handler.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
