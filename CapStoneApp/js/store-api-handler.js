@@ -1,19 +1,23 @@
-﻿const STEAM_SEARCH_URL = 'https://api.steampowered.com/ISteamApps/GetAppList/v2/';
+﻿const STEAM_SEARCH_URL = 'https://xboxapi.com/v2/2533274845190263/latest-xboxone-games';
 
-function getDataFromApi(searchTerm, callback) {
-    $.getJSON(STEAM_SEARCH_URL, callback);
+function getDataFromApi(callback) {
+    const settings  = {
+        'X-AUTH': '57af9a3a801eac046ff8c9623e4d4c3fd8ae36c7', 
+        'Content-Type': 'application/json',
+    }
+    $.getJSON(STEAM_SEARCH_URL, settings, callback);
 }
 
 function renderResult(result) {
     return `
     <div class="col-6 col-lg-4 store-sep">
-        <h2>${result.name}</h2>
-        <p>${result.appid}</p>
+        <h2>${result.ReducedName}</h2>
+        <p>${result.ReducedDescription}</p>
     </div>`;
 }
 
 function displayStoreSearchData(data) {
-    const results = data.apps.map((item, index) => renderResult(item));
+    const results = data.map((item, index) => renderResult(item));
     $('.js-search-results').html(results);
 }
 
@@ -24,7 +28,7 @@ function watchSubmit() {
         const query = queryTarget.val();
         // clear out the input
         queryTarget.val("");
-        getDataFromApi(query, displayStoreSearchData);
+        getDataFromApi(displayStoreSearchData);
     });
 }
 

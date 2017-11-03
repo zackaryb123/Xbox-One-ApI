@@ -1,8 +1,9 @@
 'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
+var request = new XMLHttpRequest();
+request.open('GET', 'https://xboxapi.com/v2/latest-xboxone-games');
+request.onload = function () {
+    
+}
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+request.send();
+

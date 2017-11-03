@@ -61,12 +61,3 @@ main {
     height: 20%;
 }
 
-.nav-bottom {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-}
-
-.hidden {
-    display: none;
-}

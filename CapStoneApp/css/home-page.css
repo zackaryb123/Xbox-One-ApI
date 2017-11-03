@@ -1,8 +1,7 @@
 ﻿.home-page {
     margin-left: 100px;
     background-color: forestgreen;
-    position: fixed;
-    width: 100%;
+    position: relative;
     height: 100%;
 }
 
@@ -30,3 +29,36 @@
     width: 80%;
 }
 
+.nav-bottom {
+    height: 100%; 
+}
+
+.home-game-search {
+    margin: 0px;s
+} 
+
+.carousel {
+    height: 100%;
+}
+
+.home-game-button {
+    background-color: #343A40;
+    border-color: #007BFF;
+    color: #007BFF;
+}
+
+.home-game-input {
+    border-color: #007BFF;
+}
+
+.home-game-card {
+    width: 100%;
+    height: 150px;
+}
+
+.home-game-row {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
