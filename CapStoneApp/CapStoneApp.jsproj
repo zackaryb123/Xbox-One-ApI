@@ -62,7 +62,6 @@
     <Content Include="css\games.css" />
     <Content Include="css\login.css" />
     <Content Include="css\meyer-reset.css" />
-    <Content Include="css\signup.css" />
     <Content Include="css\store.css" />
     <Content Include="images\logo-img.png" />
     <Content Include="index.html" />
