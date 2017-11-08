@@ -1,6 +1,6 @@
 ﻿.home-page {
     margin-left: 100px;
-    background-color: forestgreen;
+    background-color: #29a145;
     position: relative;
     height: 100%;
 }
@@ -34,7 +34,9 @@
 }
 
 .home-game-search {
-    margin: 0px;s
+    margin: 0px;
+    padding: 5px;
+    background-color: #343A40;
 } 
 
 .carousel {
@@ -43,12 +45,12 @@
 
 .home-game-button {
     background-color: #343A40;
-    border-color: #007BFF;
-    color: #007BFF;
+    border-color: #29a145;
+    color: #29a145;
 }
 
 .home-game-input {
-    border-color: #007BFF;
+    border-color: #29a145;
 }
 
 .home-game-card {

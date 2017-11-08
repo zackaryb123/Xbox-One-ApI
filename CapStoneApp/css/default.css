@@ -10,7 +10,7 @@ body {
 main {
     margin-left: 100px;
     padding: 0px 20px;
-    background-color: forestgreen;
+    background-color: #29a145;
     position: absolute;
 }
 
@@ -29,6 +29,15 @@ main {
     position: fixed;
     margin-left: 120px;
     margin-right: 20px;
+}
+
+.nav-link {
+    color: #29a145;
+}
+
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #29a145;
 }
 
 .header {
