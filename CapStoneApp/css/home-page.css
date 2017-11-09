@@ -6,6 +6,13 @@
 }
 
 .home-page-main {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 80%;
+}
+
+.contain {
     height: 100%;
     position: relative;
 }
@@ -38,13 +45,6 @@
     width: 50% !important;
     margin-bottom: 2px;
 } 
-
-.contain {
-    position: absolute;
-    display: inline-block;
-    height: 100%;
-    width: 80%;
-}
 
 .nav-bottom {
     height: 100%; 

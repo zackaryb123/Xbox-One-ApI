@@ -1,13 +1,13 @@
-﻿const XBOX_SEARCH_URL = 'https://xboxapi.com/v2/browse-marketplace/games/1?sort=releaseDate';
+﻿const XBOX_STORE_URL = 'https://xboxapi.com/v2/browse-marketplace/games/1?sort=releaseDate';
 
 function getDataFromApi(callback) {
     const settings = {
-        url: XBOX_SEARCH_URL,
-        data: {
-            'X-AUTH': 'eeb07701b9773984f1bd26783f9537f0c20487b7',
+        url: XBOX_STORE_URL,
+        headers: {
+            'X-AUTH': 'd66a2f0bf37d99e3ed7e6454d17b6c347f78ed70',
             'Content-Type': 'application/json'
         },
-        dataType: 'jsonp',
+        dataType: 'json',
         type: 'GET',
         crossDomain: true,
         error: (err) => {
@@ -18,30 +18,28 @@ function getDataFromApi(callback) {
     $.ajax(settings);
 }
 
-
-
 function renderResult(result) {
     return `
-    <div class="col-6 col-lg-4 store-sep">
-        <h2>${result.Name}</h2>
-        <p>${result.DeveloperName}</p>
-    </div>`;
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="${result.Images[0].Url}" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title">${result.Name}</h4>
+            <p class="card-text">${result.ParentalRatings[0].Rating}</p> 
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+   </div>`;
 }
 
-function displayStoreSearchData(data) {
+function displayStoreData(data) {
     let results = data.Items.map((item, index) => renderResult(item));
-    $('.js-search-results').html(results);
+    $('.js-store-results').html(results);
 }
 
-function watchSubmit() {
-    $('.js-store-form').submit(event => {
+function watchStoreTab() {
+    $('#v-pills-store-tab').on('click', event => {
         event.preventDefault();
-        const queryTarget = $(event.currentTarget).find('.js-query');
-        const query = queryTarget.val();
-        // clear out the input
-        queryTarget.val("");
-        getDataFromApi(displayStoreSearchData);
+        getDataFromApi(displayStoreData);
     });
 }
 
-$(watchSubmit);
+$(watchStoreTab); // Load inital content on web page start up

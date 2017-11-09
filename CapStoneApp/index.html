@@ -9,7 +9,6 @@
     <link href="css/default.css" rel="stylesheet" />
     <link href="css/games.css" rel="stylesheet" />
     <link href="css/store.css" rel="stylesheet" />
-    <link href="css/signup.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
 </head>
 <body class="page">
@@ -49,7 +48,7 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <form class="js-store-form form-inline store-page-form my-2 my-lg-0">
+                    <form class="js-search-form form-inline store-page-form my-2 my-lg-0">
                         <input class="form-control mr-sm-2 js-query" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
@@ -102,8 +101,8 @@
                 </div>
             </div>
         </div>
-        <div class="contain">
-            <div class="home-page-main">
+        <div class="home-page-main">
+            <div class="contain">
                 <div class="col-store">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
@@ -129,49 +128,49 @@
                 </div>
                 <div class="col-news">
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
                     <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" src="" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -185,8 +184,8 @@
         <section class="games-page" hidden>
             <div class="album text-muted">
                 <div class="container">
-                    <div class="row">
-                        <div class="card">
+                    <div class="row js-game-results">
+                    <!--<div class="card js-game-results">
                             <img data-src="holder.js/100px280?theme=thumb" alt="Thumbnail [100%x280]" style="height: 280px; width: 100%; display: block;" src="" data-holder-rendered="true">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
@@ -223,7 +222,7 @@
                         <div class="card">
                             <img data-src="holder.js/100px280?theme=thumb" alt="Thumbnail [100%x280]" style="height: 280px; width: 100%; display: block;" src="" data-holder-rendered="true">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
@@ -237,7 +236,7 @@
                             <h1>Xbox One Games</h1>
                             <p>View or search the store to find Games.</p>
                         </div>
-                        <div class="row js-search-results">
+                        <div class="row js-store-results">
                         <!-- <div class="col-6 col-lg-4">
                                 <h2>Heading</h2>
                                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
@@ -251,7 +250,7 @@
         </section>
 
         <section class="profile-page" hidden>
-            <div >
+            <div>
 
             </div>
         </section>
@@ -282,10 +281,10 @@
     </section>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="js/store-api-handler.js"></script>
-    <script src="js/news-api-handler.js"></script>
+    <!--<script src="js/games-api-handler.js"></script>-->
     <script src="js/main.js"></script>
 </body>
 </html>
