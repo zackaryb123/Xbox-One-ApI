@@ -1,11 +1,11 @@
 ﻿const XBOX_STORE_URL = 'https://xboxapi.com/v2/browse-marketplace/games/';
 let STORE_PAGE_COUNT = 1;
 
-function getDataFromApi(callback, apiUrl, page) {
+function getDataFromStoreApi(callback, apiUrl, page) {
     const settings = {
         url: apiUrl + page.toString(),
         headers: {
-            'X-AUTH': 'd66a2f0bf37d99e3ed7e6454d17b6c347f78ed70',
+            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
             'Content-Type': 'application/json'
         },
         dataType: 'json',
@@ -41,9 +41,9 @@ function watchNextBtn() {
         event.preventDefault();
         if (STORE_PAGE_COUNT < 1000) {
             STORE_PAGE_COUNT++;
-            getDataFromApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT)
+            getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT)
         }
-    })
+    });
 }
 
 function watchPrevBtn() {
@@ -51,13 +51,13 @@ function watchPrevBtn() {
         event.preventDefault();
         if (STORE_PAGE_COUNT > 1) {
             STORE_PAGE_COUNT--;
-            getDataFromApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT)
+            getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT)
         }
-    })
+    });
 }
 
 function handleStoreEvents() {
-    getDataFromApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
+    getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
     $(watchPrevBtn);
     $(watchNextBtn);
 }

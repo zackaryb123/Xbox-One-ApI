@@ -1,11 +1,11 @@
 ﻿const SEARCH_STORE_URL = 'https://xboxapi.com/v2/browse-marketplace/games';
 
 
-function getDataFromApi(searchTerm, callback, apiUrl) {
+function getDataFromSearchApi(searchTerm, callback, apiUrl) {
     const settings = {
         url: apiUrl,
         headers: {
-            'X-AUTH': 'd66a2f0bf37d99e3ed7e6454d17b6c347f78ed70',
+            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
             'Content-Type': 'application/json'
         },
         data: {"Name": `${searchTerm}`},
@@ -20,7 +20,7 @@ function getDataFromApi(searchTerm, callback, apiUrl) {
     $.ajax(settings);
 }
 
-function renderStoreResult(result) {
+function renderSearchResult(result) {
     return `
     <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="${result.Images[0].Url}" alt="Card image cap">
@@ -33,7 +33,7 @@ function renderStoreResult(result) {
 }
 
 function displaySearchData(data) {
-    let results = data.Items.map((item, index) => renderStoreResult(item));
+    let results = data.Items.map((item, index) => renderSearchResult(item));
     $('.js-store-results').html(results);
 }
 
@@ -44,8 +44,9 @@ function watchSearchForm() {
         const query = queryTarget.val();
         queryTarget.val("");
         // If/Swithch statment to decide which api url to pull from 
-        getDataFromStoreApi(query, displaySearchData, SEARCH_STORE_URL);
+        getDataFromSearchStoreApi(query, displaySearchData, SEARCH_STORE_URL);
     });
 }
 
+// Implement later - Have to store data then search for content to enable search
 //$(watchSearchForm);

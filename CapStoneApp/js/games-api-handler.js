@@ -1,10 +1,10 @@
-﻿const USER_GAMES_URL = 'https://xboxapi.com/v2/2533274845190263/xboxonegames';
+﻿const USER_GAMES_URL = 'https://xboxapi.com/v2/2533274858701166/xboxonegames';
 
-function getDataFromUserApi(callback, apiURL) {
+function getDataFromGameApi(callback, apiURL) {
     const settings = {
         url: apiURL,
         headers: {
-            'X-AUTH': 'd66a2f0bf37d99e3ed7e6454d17b6c347f78ed70',
+            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
             'Content-Type': 'application/json'
         },
         dataType: 'json',
@@ -20,17 +20,17 @@ function getDataFromUserApi(callback, apiURL) {
 
 function renderGameResults(render, index) {
     return `
-    <div id="accordion-game-${index}" role="tablist">
+    <div id="accordion-game-${render.titleId}" role="tablist">
       <div class="card">
-        <div class="card-header" role="tab" id="heading-game${index}">
+        <div class="card-header" role="tab" id="heading-game-${render.titleId}">
           <h5 class="mb-0">
-            <a data-toggle="collapse" href="#collapse-game${index}" aria-expanded="true" aria-controls="collapse${index}">
+            <a data-toggle="collapse" href="#index-${index}" aria-expanded="true" aria-controls="collapse-game-${render.titleId}">
               ${render.name}
             </a>
           </h5>
         </div>
 
-        <div id="collapse-game${index}" class="collapse" role="tabpanel" aria-labelledby="heading-game${index}" data-parent="#accordion-game-${index}">
+        <div id="index-${index}" class="collapse" role="tabpanel" aria-labelledby="heading-game-${render.titleId}" data-parent="#accordion-game-${render.titleId}">
           <div class="card-body">
             <p class="card-text">Earned Achievements: ${render.earnedAchievements}</p>
             <p class="card-text">Current Gamerscore: ${render.currentGamerscore}</p>
@@ -43,22 +43,23 @@ function renderGameResults(render, index) {
 
 function renderGameResultsOnProfile(render, index) {
     return `
-    <div class="profile-game-content" id="accordion-profile-game${index}" role="tablist">
+    <div class="profile-game-content" id="accordion-profile-${render.titleId}" role="tablist">
       <div class="card">
-        <div class="card-header" role="tab" id="heading-profile-game${index}">
+        <div class="card-header" role="tab" id="heading-profile-${render.titleId}">
           <h5 class="mb-0">
-            <a data-toggle="collapse" href="#collapse-profile-game${index}" aria-expanded="true" aria-controls="collapse-profile-game${index}">
+            <a data-toggle="collapse" href="#${render.titleId}" aria-expanded="true" aria-controls="collapse-profile-${render.titleId}">
               ${render.name}
             </a>
           </h5>
         </div>
 
-        <div id="collapse-profile-game${index}" class="collapse" role="tabpanel" aria-labelledby="heading-profile-game${index}" data-parent="#accordion-profile-game${index}">
+        <div id="${render.titleId}" class="collapse" role="tabpanel" aria-labelledby="heading-profile-${render.titleId}" data-parent="#accordion-profile-${render.titleId}">
           <div class="card-body">
             <p class="card-text">Earned Achievements: ${render.earnedAchievements}</p>
             <p class="card-text">Current Gamerscore: ${render.currentGamerscore}</p>
             <p class="card-text">Max Gamerscore: ${render.maxGamerscore}</p>
           </div>
+          <button type="button" class="btn btn-primary btn-sm profile-game-btn" style="/* margin-right: auto; *//* margin-left: auto; */width: 100%;">Small button</button>
         </div>
       </div>
     </div>`;
@@ -73,7 +74,7 @@ function displayGameContent(display) {
 }
 
 function handleGameEvents() {
-    getDataFromUserApi(displayGameContent, USER_GAMES_URL);
+    getDataFromGameApi(displayGameContent, USER_GAMES_URL);
 }
 
 $(handleGameEvents);
