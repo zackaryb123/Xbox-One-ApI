@@ -4,7 +4,7 @@ function getDataFromGameApi(callback, apiURL) {
     const settings = {
         url: apiURL,
         headers: {
-            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
+            'X-AUTH': USER_CREDS.API_KEY,
             'Content-Type': 'application/json'
         },
         dataType: 'json',
@@ -77,4 +77,4 @@ function handleGameEvents() {
     getDataFromGameApi(displayGameContent, USER_GAMES_URL);
 }
 
-$(handleGameEvents);
+//$(handleGameEvents);

@@ -5,7 +5,7 @@ function getDataFromStoreApi(callback, apiUrl, page) {
     const settings = {
         url: apiUrl + page.toString(),
         headers: {
-            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
+            'X-AUTH': USER_CREDS.API_KEY,
             'Content-Type': 'application/json'
         },
         dataType: 'json',
@@ -57,9 +57,8 @@ function watchPrevBtn() {
 }
 
 function handleStoreEvents() {
-    getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
     $(watchPrevBtn);
     $(watchNextBtn);
 }
 
-//$(handleStoreEvents);
+$(handleStoreEvents);

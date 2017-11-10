@@ -5,7 +5,7 @@ function getDataFromSearchApi(searchTerm, callback, apiUrl) {
     const settings = {
         url: apiUrl,
         headers: {
-            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
+            'X-AUTH': USER_CREDS.API_KEY,
             'Content-Type': 'application/json'
         },
         data: {"Name": `${searchTerm}`},

@@ -1,12 +1,12 @@
-﻿const USER_CLIPS_URL = 'https://xboxapi.com/v2/2533274858701166/game-clips/';
+﻿const USER_CLIPS_URL = 'https://xboxapi.com/v2/';
 
 const STORE_GAME_CLIPS = [{mp4:''}];
 
 function getDataFromClipsApi(callback, apiURL, gameId) {
     const settings = {
-        url: apiURL + gameId,
+        url: apiURL + USER_CREDS.UXID + '/game-clips/' + gameId,
         headers: {
-            'X-AUTH': '3f4f1234677cb8c21e729c00718e72102ead9c37',
+            'X-AUTH': USER_CREDS.API_KEY,
             'Content-Type': 'application/json'
         },
         dataType: 'json',

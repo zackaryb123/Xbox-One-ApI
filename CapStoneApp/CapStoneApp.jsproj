@@ -60,7 +60,7 @@
     </AppxManifest>
     <Content Include="css\home-page.css" />
     <Content Include="css\games.css" />
-    <Content Include="css\login.css" />
+    <Content Include="css\log-in.css" />
     <Content Include="css\meyer-reset.css" />
     <Content Include="css\store.css" />
     <Content Include="images\logo-img.png" />
@@ -78,6 +78,7 @@
     <Content Include="js\profile-api-handler.js" />
     <Content Include="js\search-api-handler.js" />
     <Content Include="js\store-api-handler.js" />
+    <Content Include="js\user-credentials-handler.js" />
     <None Include="CapStoneApp_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />

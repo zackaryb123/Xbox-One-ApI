@@ -9,7 +9,7 @@
     <link href="css/default.css" rel="stylesheet" />
     <link href="css/games.css" rel="stylesheet" />
     <link href="css/store.css" rel="stylesheet" />
-    <link href="css/login.css" rel="stylesheet" />
+    <link href="css/log-in.css" rel="stylesheet" />
 </head>
 <body class="page">
 
@@ -26,6 +26,7 @@
                         <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
                         <a class="nav-link" id="v-pills-games-tab" data-toggle="pill" href="#v-pills-games" role="tab" aria-controls="v-pills-games" aria-selected="false">Games</a>
                         <a class="nav-link" id="v-pills-store-tab" data-toggle="pill" href="#v-pills-store" role="tab" aria-controls="v-pills-store" aria-selected="false">Store</a>
+                        <button class="log-in-btn" onclick="document.getElementById('id01').style.display='block'">Login</button>
                     </div>
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
@@ -53,7 +54,7 @@
         </div>
     </header>
 
-    <section class="profile-page" visible>
+    <section class="profile-page">
         <div class="col-game">
             <div class="row profile-game-row">
                 <div class="js-profile-game-results">
@@ -164,33 +165,36 @@
         </section>
     </main>
 
-    <section class="login-page" hidden>
-        <div waid71fa0d88-5390-4b5b-a2f4-e45fa93d85e2="SA password protect entry checker" cz-shortcut-listen="true">
-            <div class="container">
-                <form class="form-signin">
-                    <h2 class="form-signin-heading">Please log in</h2>
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-                </form>
-            </div>
+    <section class="login-page"> <!--Hide on Login success-->
+        <div id="id01" class="modal">
+            <!-- Modal Content -->
+            <form id="login-form" class="modal-content animate">
+                <div class="imgcontainer">
+                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label><b>Xbox Uxid</b></label>
+                    <input id="js-user-uxid" type="text" placeholder="XBOX Profile User ID" name="uname" required>
+
+                    <label><b>API Key</b></label>
+                    <input id="js-user-apikey" type="password" placeholder="XboxAPI API Key" name="psw" required>
+
+                    <button class="login-btn" type="submit">Login</button>
+                </div>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </form>
         </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/user-credentials-handler.js"></script>
     <script src="js/store-api-handler.js"></script>
     <script src="js/games-api-handler.js"></script>
     <script src="js/profile-api-handler.js"></script>
-    <!--<script src="js/search-api-handler.js"></script>-->
+    <script src="js/search-api-handler.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
