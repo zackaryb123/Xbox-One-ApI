@@ -25,4 +25,11 @@
 .js-store-results .card {
     margin-bottom: 15px;
     margin-right: 15px;
+    background-color: #343A40;
+    color: white;
+}
+
+.jumbotron {
+    background-color: #343A40;
+    color: white;
 }

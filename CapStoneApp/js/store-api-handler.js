@@ -1,8 +1,9 @@
-﻿const XBOX_STORE_URL = 'https://xboxapi.com/v2/browse-marketplace/games/1?sort=releaseDate';
+﻿const XBOX_STORE_URL = 'https://xboxapi.com/v2/browse-marketplace/games/';
+let STORE_PAGE_COUNT = 1;
 
-function getDataFromApi(callback) {
+function getDataFromApi(callback, apiUrl, page) {
     const settings = {
-        url: XBOX_STORE_URL,
+        url: apiUrl + page.toString(),
         headers: {
             'X-AUTH': 'd66a2f0bf37d99e3ed7e6454d17b6c347f78ed70',
             'Content-Type': 'application/json'
@@ -18,7 +19,7 @@ function getDataFromApi(callback) {
     $.ajax(settings);
 }
 
-function renderResult(result) {
+function renderStoreResults(result) {
     return `
     <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="${result.Images[0].Url}" alt="Card image cap">
@@ -31,15 +32,34 @@ function renderResult(result) {
 }
 
 function displayStoreData(data) {
-    let results = data.Items.map((item, index) => renderResult(item));
+    let results = data.Items.map((item, index) => renderStoreResults(item));
     $('.js-store-results').html(results);
 }
 
-function watchStoreTab() {
-    $('#v-pills-store-tab').on('click', event => {
+function watchNextBtn() {
+    $('#js-store-next').on('click', event => {
         event.preventDefault();
-        getDataFromApi(displayStoreData);
-    });
+        if (STORE_PAGE_COUNT < 1000) {
+            STORE_PAGE_COUNT++;
+            getDataFromApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT)
+        }
+    })
 }
 
-$(watchStoreTab); // Load inital content on web page start up
+function watchPrevBtn() {
+    $('#js-store-prev').on('click', event => {
+        event.preventDefault();
+        if (STORE_PAGE_COUNT > 1) {
+            STORE_PAGE_COUNT--;
+            getDataFromApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT)
+        }
+    })
+}
+
+function handleStoreEvents() {
+    getDataFromApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
+    $(watchPrevBtn);
+    $(watchNextBtn);
+}
+
+//$(handleStoreEvents);

@@ -18,28 +18,62 @@ function getDataFromUserApi(callback, apiURL) {
     $.ajax(settings);
 }
 
-function renderResult(render) {
+function renderGameResults(render, index) {
     return `
-    <div class="card">
-        <div data-src="holder.js/100px280?theme=thumb" data-holder-rendered="true" style="height: 280px; width: 100%; display: block;">
-            <p class="card-text">Game: ${render.name}</p>
+    <div id="accordion-game-${index}" role="tablist">
+      <div class="card">
+        <div class="card-header" role="tab" id="heading-game${index}">
+          <h5 class="mb-0">
+            <a data-toggle="collapse" href="#collapse-game${index}" aria-expanded="true" aria-controls="collapse${index}">
+              ${render.name}
+            </a>
+          </h5>
+        </div>
+
+        <div id="collapse-game${index}" class="collapse" role="tabpanel" aria-labelledby="heading-game${index}" data-parent="#accordion-game-${index}">
+          <div class="card-body">
             <p class="card-text">Earned Achievements: ${render.earnedAchievements}</p>
             <p class="card-text">Current Gamerscore: ${render.currentGamerscore}</p>
             <p class="card-text">Max Gamerscore: ${render.maxGamerscore}</p>
+          </div>
         </div>
+      </div>
+    </div>`;
+}
+
+function renderGameResultsOnProfile(render, index) {
+    return `
+    <div class="profile-game-content" id="accordion-profile-game${index}" role="tablist">
+      <div class="card">
+        <div class="card-header" role="tab" id="heading-profile-game${index}">
+          <h5 class="mb-0">
+            <a data-toggle="collapse" href="#collapse-profile-game${index}" aria-expanded="true" aria-controls="collapse-profile-game${index}">
+              ${render.name}
+            </a>
+          </h5>
+        </div>
+
+        <div id="collapse-profile-game${index}" class="collapse" role="tabpanel" aria-labelledby="heading-profile-game${index}" data-parent="#accordion-profile-game${index}">
+          <div class="card-body">
+            <p class="card-text">Earned Achievements: ${render.earnedAchievements}</p>
+            <p class="card-text">Current Gamerscore: ${render.currentGamerscore}</p>
+            <p class="card-text">Max Gamerscore: ${render.maxGamerscore}</p>
+          </div>
+        </div>
+      </div>
     </div>`;
 }
 
 function displayGameContent(display) {
-    let results = display.titles.map((item, index) => renderResult(item));
-    $('.js-game-results').html(results);
+    let GameResults = display.titles.map((item, index) => renderGameResults(item, index));
+    let ProfileGameResults = display.titles.map((item, index) => renderGameResultsOnProfile(item, index));
+    $('.js-game-results').html(GameResults);
+    $('.js-profile-game-results').html(ProfileGameResults);
+
 }
 
-function watchGameTab() {
-    $('#v-pills-games-tab').on('click', event => {
-        event.preventDefault();
-        getDataFromUserApi(displayGameContent, USER_GAMES_URL);
-    });
+function handleGameEvents() {
+    getDataFromUserApi(displayGameContent, USER_GAMES_URL);
 }
 
-$(watchGameTab); // Load inital content on web page start up
+$(handleGameEvents);
