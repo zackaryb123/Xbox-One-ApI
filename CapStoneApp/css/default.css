@@ -39,6 +39,8 @@ main {
     height: 15%;
     margin-bottom: 2px;
     border: 1px solid black;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: #343a40;
 }
 
 .nav-pills .nav-link.active {
@@ -67,8 +69,6 @@ main {
     width: 100%;
     border-radius: 10px;
 }
-
-
 
 .nav-content, .main-nav, .nav-pills {
     height: 100%;

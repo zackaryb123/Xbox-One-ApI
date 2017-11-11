@@ -26,7 +26,7 @@
                         <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
                         <a class="nav-link" id="v-pills-games-tab" data-toggle="pill" href="#v-pills-games" role="tab" aria-controls="v-pills-games" aria-selected="false">Games</a>
                         <a class="nav-link" id="v-pills-store-tab" data-toggle="pill" href="#v-pills-store" role="tab" aria-controls="v-pills-store" aria-selected="false">Store</a>
-                        <button class="log-in-btn" onclick="document.getElementById('id01').style.display='block'">Login</button>
+                        <button class="log-in-btn nav-link" onclick="document.getElementById('id01').style.display='block'">Login</button>
                     </div>
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
@@ -39,7 +39,7 @@
 
         <div class="top-nav" hidden>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">Search the Store</a>
+                <a class="navbar-brand" href="#">Search Content</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -165,15 +165,17 @@
         </section>
     </main>
 
-    <section class="login-page"> <!--Hide on Login success-->
+    <div class="login-page">
         <div id="id01" class="modal">
-            <!-- Modal Content -->
             <form id="login-form" class="modal-content animate">
+                <div>
+                    <a class="register-btn" href="https://xboxapi.com/register" target="_blank">Register</a>
+                </div>
                 <div class="imgcontainer">
-                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                    <img src="images/logo-img.png" alt="Avatar" class="avatar">
                 </div>
 
-                <div class="container">
+                <div class="creds-container">
                     <label><b>Xbox Uxid</b></label>
                     <input id="js-user-uxid" type="text" placeholder="XBOX Profile User ID" name="uname" required>
 
@@ -185,7 +187,7 @@
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </form>
         </div>
-    </section>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

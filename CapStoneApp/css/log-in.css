@@ -15,12 +15,11 @@
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #9E9E9E;
     margin: 5px auto; /* 15% from the top and centered */
-    border: 1px solid #888;
+    border: 1px solid #000000;
     width: 80%; /* Could be more or less, depending on screen size */
 }
-
 
 /* Add Zoom Animation */
 .animate {
@@ -52,4 +51,41 @@
     position: absolute;
     bottom: 0px;
     width: 100%;
+}
+
+.imgcontainer,
+.creds-container {
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.avatar {
+    width: 100px;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 10px;
+}
+
+.cancelbtn,
+.login-btn,
+.register-btn {
+    color: #ffffff;
+    height: 15%;
+    border: 1px solid #29A145;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: #343a40;
+    border-radius: .3rem;
+}
+
+.cancelbtn {
+    margin: 0px 10px;
+}
+
+.register-btn {
+    float: right;
+    margin: 10px 10px 0px 0px;
+    padding: 5px;
+}
+
+.login-btn {
+
 }

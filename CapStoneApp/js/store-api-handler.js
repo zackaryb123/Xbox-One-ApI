@@ -61,4 +61,4 @@ function handleStoreEvents() {
     $(watchNextBtn);
 }
 
-$(handleStoreEvents);
+//$(handleStoreEvents);

@@ -89,4 +89,4 @@ function HandleProfileEvents() {
     watchGameClipBtn();
 }
 
-$(HandleProfileEvents);
+//$(HandleProfileEvents);

@@ -73,8 +73,8 @@ function displayGameContent(display) {
 
 }
 
-function handleGameEvents() {
-    getDataFromGameApi(displayGameContent, USER_GAMES_URL);
-}
+//function handleGameEvents() {
+//    getDataFromGameApi(displayGameContent, USER_GAMES_URL);
+//}
 
 //$(handleGameEvents);

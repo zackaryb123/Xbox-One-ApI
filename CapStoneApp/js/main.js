@@ -25,4 +25,7 @@
     });
 }
 
-$(onNavButton);
+function HandleMainEvents() {
+    onNavButton();
+}
+$(HandleMainEvents);

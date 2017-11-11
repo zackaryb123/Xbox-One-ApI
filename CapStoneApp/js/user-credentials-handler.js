@@ -3,7 +3,8 @@
 const USER_CREDS =
     {
         API_KEY: '',
-        UXID: ''
+        UXID: '',
+        TAG_IMG: ''
     };
 
 function getCredsFromGameApi(apiURL, xuid, apikey) {
@@ -25,6 +26,8 @@ function getCredsFromGameApi(apiURL, xuid, apikey) {
             alert("Success! Press Cancel");
             USER_CREDS.UXID = xuid;
             USER_CREDS.API_KEY = apikey;
+            USER_CREDS.TAG_IMG = res.GameDisplayPicRaw;
+            $('.logo-img').attr('src', USER_CREDS.TAG_IMG);
             getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
             getDataFromGameApi(displayGameContent, USER_GAMES_URL);
         }
