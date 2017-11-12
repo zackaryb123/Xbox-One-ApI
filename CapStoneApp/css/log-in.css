@@ -47,16 +47,12 @@
     }
 }
 
-.log-in-btn {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-}
-
 .imgcontainer,
 .creds-container {
     text-align: center;
     margin: 30px 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .avatar {
@@ -74,6 +70,7 @@
     text-shadow: 2px 2px 4px #000000;
     background-color: #343a40;
     border-radius: .3rem;
+    padding: 5px;
 }
 
 .cancelbtn {
@@ -85,7 +82,35 @@
     margin: 10px 10px 0px 0px;
     padding: 5px;
 }
-
 .login-btn {
+    display: inline-block;
+}
 
+.creds-container > *,
+.cancelbtn {
+    margin-bottom: 5px;
+}
+
+.imgcontainer {
+    margin: 0px 5px 5px;
+}
+
+.creds-container label {
+    display: block;
+}
+
+#js-user-apikey {
+    margin-right: 30px;
+}
+
+#js-user-uxid {
+    margin-right: 45.1px;
+}
+
+.gamer-tag,
+.gamer-score, 
+.gamer-rep {
+    margin-bottom: 5px;
+    font-family: monospace;
+    font-size: 18px;
 }

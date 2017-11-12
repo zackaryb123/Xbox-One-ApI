@@ -54,12 +54,7 @@ function renderGameResultsOnProfile(render, index) {
         </div>
 
         <div id="${render.titleId}" class="collapse" role="tabpanel" aria-labelledby="heading-profile-${render.titleId}" data-parent="#accordion-profile-${render.titleId}">
-          <div class="card-body">
-            <p class="card-text">Earned Achievements: ${render.earnedAchievements}</p>
-            <p class="card-text">Current Gamerscore: ${render.currentGamerscore}</p>
-            <p class="card-text">Max Gamerscore: ${render.maxGamerscore}</p>
-          </div>
-          <button type="button" class="btn btn-primary btn-sm profile-game-btn" style="/* margin-right: auto; *//* margin-left: auto; */width: 100%;">Small button</button>
+          <button type="button" class="btn btn-primary btn-sm profile-game-btn" style="width: 100%;">Veiw Clips</button>
         </div>
       </div>
     </div>`;
@@ -72,9 +67,3 @@ function displayGameContent(display) {
     $('.js-profile-game-results').html(ProfileGameResults);
 
 }
-
-//function handleGameEvents() {
-//    getDataFromGameApi(displayGameContent, USER_GAMES_URL);
-//}
-
-//$(handleGameEvents);

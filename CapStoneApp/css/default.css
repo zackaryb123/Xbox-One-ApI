@@ -56,7 +56,7 @@ main {
 .logo {
     display: inline-block;
     position: relative;
-    height: 75px;
+    height: 96px;
     width: 100%;
 }
 
@@ -72,4 +72,12 @@ main {
 
 .nav-content, .main-nav, .nav-pills {
     height: 100%;
+}
+
+.log-in-btn {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 0px;
+    font-size: 12px;
 }

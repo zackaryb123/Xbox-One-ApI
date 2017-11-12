@@ -4,7 +4,10 @@ const USER_CREDS =
     {
         API_KEY: '',
         UXID: '',
-        TAG_IMG: ''
+        TAG_IMG: '',
+        GAMER_TAG: '',
+        GAMER_SCORE: '',
+        GAMER_REP: ''
     };
 
 function getCredsFromGameApi(apiURL, xuid, apikey) {
@@ -23,19 +26,25 @@ function getCredsFromGameApi(apiURL, xuid, apikey) {
             console.log(err);
         },
         success: (res) => {
-            alert("Success! Press Cancel");
             USER_CREDS.UXID = xuid;
             USER_CREDS.API_KEY = apikey;
             USER_CREDS.TAG_IMG = res.GameDisplayPicRaw;
+            USER_CREDS.GAMER_TAG = res.Gamertag;
+            USER_CREDS.GAMER_SCORE = res.Gamerscore;
+            USER_CREDS.GAMER_REP = res.XboxOneRep;
+
             $('.logo-img').attr('src', USER_CREDS.TAG_IMG);
+            $('.gamer-tag').text(USER_CREDS.GAMER_TAG);
+            $('.gamer-score').text(USER_CREDS.GAMER_SCORE);
+            $('.gamer-rep').text(USER_CREDS.GAMER_REP);
+            $('.log-in-btn').text(USER_CREDS.GAMER_TAG);
+
             getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
             getDataFromGameApi(displayGameContent, USER_GAMES_URL);
         }
     };
     $.ajax(settings);
 }
-
-
 
 function watchCredsSubmit() {
     $('#login-form').on('click', '.login-btn', event => {

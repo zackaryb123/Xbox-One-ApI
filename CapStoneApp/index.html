@@ -23,7 +23,7 @@
                 </div>
                 <nav class="main-nav">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</a>
+                        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Clips</a>
                         <a class="nav-link" id="v-pills-games-tab" data-toggle="pill" href="#v-pills-games" role="tab" aria-controls="v-pills-games" aria-selected="false">Games</a>
                         <a class="nav-link" id="v-pills-store-tab" data-toggle="pill" href="#v-pills-store" role="tab" aria-controls="v-pills-store" aria-selected="false">Store</a>
                         <button class="log-in-btn nav-link" onclick="document.getElementById('id01').style.display='block'">Login</button>
@@ -47,7 +47,7 @@
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                     <form class="js-search-form form-inline store-page-form my-2 my-lg-0">
                         <input class="form-control mr-sm-2 js-query" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
                     </form>
                 </div>
             </nav>
@@ -68,60 +68,10 @@
                     <div class="js-iframe-clip">
 
                     </div>
-                    <div class="list-group">
-                        <div class="js-profile-clips-results">
-                    
-                        </div>
-                    </div>
                 </div>
-                <div class="col-stats">
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 20rem;">
-                        <img class="card-img-top" src="" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+                <div class="list-group">
+                    <div class="js-profile-clips-results">
+
                     </div>
                 </div>
             </div>
@@ -172,15 +122,20 @@
                     <a class="register-btn" href="https://xboxapi.com/register" target="_blank">Register</a>
                 </div>
                 <div class="imgcontainer">
-                    <img src="images/logo-img.png" alt="Avatar" class="avatar">
+                    <img class="logo-img avatar" src="images/logo-img.png" alt="Avatar">
+                    <p class="gamer-tag"></p>
+                    <p class="gamer-score"></p>
+                    <p class="gamer-rep"></p>
                 </div>
 
                 <div class="creds-container">
-                    <label><b>Xbox Uxid</b></label>
-                    <input id="js-user-uxid" type="text" placeholder="XBOX Profile User ID" name="uname" required>
+                    <label><b>Xbox Uxid</b>
+                        <input id="js-user-uxid" type="text" placeholder="XBOX Profile User ID" name="uname" required>
+                    </label>
 
-                    <label><b>API Key</b></label>
-                    <input id="js-user-apikey" type="password" placeholder="XboxAPI API Key" name="psw" required>
+                    <label><b>API Key</b>
+                        <input id="js-user-apikey" type="password" placeholder="Xbox API API Key" name="psw" required>
+                    </label>
 
                     <button class="login-btn" type="submit">Login</button>
                 </div>
