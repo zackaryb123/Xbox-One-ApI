@@ -19,6 +19,7 @@
 }
 
 .col-game {
+    float: right;
     position: relative;
     display: inline-block;
     width: 20%;
@@ -87,14 +88,14 @@
     width: 100%;
     background-color: #343A40;
     color: white;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
 }
 
 .profile-game-content .card {
     background-color: #343A40;
     color: white;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
 }
 

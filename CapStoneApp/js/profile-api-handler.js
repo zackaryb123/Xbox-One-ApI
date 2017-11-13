@@ -12,9 +12,6 @@ function getDataFromClipsApi(callback, apiURL, gameId) {
         dataType: 'json',
         type: 'GET',
         crossDomain: true,
-        error: (err) => {
-            console.log(err);
-        },
         success: callback
     };
     $.ajax(settings);
@@ -43,19 +40,16 @@ function RenderProfileGameClips(render, index) {
 
 function DisplayProfileGameClips(display) {
     let GameResults = display.map((item, index) =>
-        RenderProfileGameClips(item, index));   
-    $('.js-profile-clips-results').html(GameResults);
-}
+        RenderProfileGameClips(item, index));
 
-function StoreClipMp4(store) {
-    let StoreResults = store.map((item, index) =>
+    display.map((item, index) =>
         STORE_GAME_CLIPS[index] = {
             mp4: `${item.gameClipUris[0].uri}`
         }
     );
-    console.log(STORE_GAME_CLIPS);
-}
 
+    $('.js-profile-clips-results').html(GameResults);
+}
 
 function watchProfileGameBtn() {
     $('.js-profile-game-results').on('click', '.profile-game-btn', event => {
@@ -66,10 +60,7 @@ function watchProfileGameBtn() {
         const game_element = $(event.currentTarget).parent();
         const game_id = game_element.attr('id');
 
-        console.log(game_id);
-
         getDataFromClipsApi(DisplayProfileGameClips, USER_CLIPS_URL, game_id);
-        getDataFromClipsApi(StoreClipMp4, USER_CLIPS_URL, game_id);
     });
 }
 

@@ -10,9 +10,6 @@ function getDataFromGameApi(callback, apiURL) {
         dataType: 'json',
         type: 'GET',
         crossDomain: true,
-        error: (err) => {
-            console.log(err);
-        },
         success: callback
     };
     $.ajax(settings);

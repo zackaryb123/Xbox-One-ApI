@@ -23,7 +23,6 @@ function getCredsFromGameApi(apiURL, xuid, apikey) {
         crossDomain: true,
         error: (err) => {
             alert('Either API Key or Uxid incorrect! Try Again')
-            console.log(err);
         },
         success: (res) => {
             USER_CREDS.UXID = xuid;
@@ -51,11 +50,9 @@ function watchCredsSubmit() {
         event.preventDefault();
         const getUserUxidC = $(event.currentTarget).parent().find('#js-user-uxid');
         const UserUxidC = getUserUxidC.val();
-        console.log(UserUxidC);
 
         const getUserAPIKeyC = $(event.currentTarget).parent().find('#js-user-apikey');
         const UserAPIKeyC = getUserAPIKeyC.val();
-        console.log(UserAPIKeyC);
 
         getUserUxidC.val("");
         getUserAPIKeyC.val("");

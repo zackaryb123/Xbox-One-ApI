@@ -10,12 +10,14 @@
                 currentPage = $('.page').find('section:visible');
                 break;
             case 'v-pills-games-tab':
+                $('.navbar-brand').text('GAMES');
                 $(currentPage).attr( 'hidden', true);
                 $('.top-nav').attr('hidden', false);
                 $('.games-page').attr('hidden', false);
                 currentPage = $('.page').find('section:visible');
                 break;
             case 'v-pills-store-tab':
+                $('.navbar-brand').text('STORE')
                 $(currentPage).attr('hidden', true);
                 $('.top-nav').attr('hidden', false);
                 $('.store-page').attr('hidden', false);
