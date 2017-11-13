@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CapStoneApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    <link href="css/meyer-reset.css" rel="stylesheet" />
+    <link href="css/home-page.css" rel="stylesheet" />
+    <link href="css/default.css" rel="stylesheet" />
+    <link href="css/games.css" rel="stylesheet" />
+    <link href="css/store.css" rel="stylesheet" />
+    <link href="css/log-in.css" rel="stylesheet" />
+</head>
+<body class="page">
+
+    <header role="banner" class="header">
+        <div class="col-nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <img class="logo-img" src="images/logo-img.png" alt="game controller logo" />
+                </div>
+                <nav class="main-nav">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Clips</a>
+                        <a class="nav-link" id="v-pills-games-tab" data-toggle="pill" href="#v-pills-games" role="tab" aria-controls="v-pills-games" aria-selected="false">Games</a>
+                        <a class="nav-link" id="v-pills-store-tab" data-toggle="pill" href="#v-pills-store" role="tab" aria-controls="v-pills-store" aria-selected="false">Store</a>
+                        <button class="log-in-btn nav-link" onclick="document.getElementById('id01').style.display='block'">Login</button>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-games" role="tabpanel" aria-labelledby="v-pills-games-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-store" role="tabpanel" aria-labelledby="v-pills-store-tab">...</div>                
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="top-nav" hidden>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Search Content</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <form class="js-search-form form-inline store-page-form my-2 my-lg-0">
+                        <input class="form-control mr-sm-2 js-query" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+                    </form>
+                </div>-->
+            </nav>
+        </div>
+    </header>
+
+    <section class="profile-page">
+        <div class="col-game">
+            <div class="row profile-game-row">
+                <div class="js-profile-game-results">
+
+                </div>
+            </div>
+        </div>
+        <div class="profile-page-main">
+            <div class="contain">
+                <div class="col-store">
+                    <div class="js-iframe-clip">
+
+                    </div>
+                </div>
+                <div class="list-group">
+                    <div class="js-profile-clips-results">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main role="main">
+        <section class="games-page" hidden>
+            <div class="album text-muted">
+                <div class="container">
+                    <div class="row js-game-results">
+                        <div class="card js-game-results">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="store-page" hidden>
+            <div role="main" class="container">
+                <div class="row row-offcanvas row-offcanvas-right">
+                    <div class="col-12 col-md-9">
+                        <div class="jumbotron">
+                            <h5>Xbox One Games!</h5>
+                            <p>Browse games and view details.</p>
+                        </div>
+                        <div class="row js-store-results">
+
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item" id="js-store-prev"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item" id="js-store-next"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </section>
+    </main>
+
+    <div class="login-page">
+        <div id="id01" class="modal">
+            <form id="login-form" class="modal-content animate">
+                <div>
+                    <a class="register-btn" href="https://xboxapi.com/register" target="_blank">Register</a>
+                </div>
+                <div class="imgcontainer">
+                    <img class="logo-img avatar" src="images/logo-img.png" alt="Avatar">
+                    <p class="gamer-tag"></p>
+                    <p class="gamer-score"></p>
+                    <p class="gamer-rep"></p>
+                </div>
+
+                <div class="creds-container">
+                    <label><b>Xbox Uxid</b>
+                        <input id="js-user-uxid" type="text" placeholder="XBOX Profile User ID" name="uname" required>
+                    </label>
+
+                    <label><b>API Key</b>
+                        <input id="js-user-apikey" type="password" placeholder="Xbox API API Key" name="psw" required>
+                    </label>
+
+                    <button class="login-btn" type="submit">Login</button>
+                </div>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/user-credentials-handler.js"></script>
+    <script src="js/store-api-handler.js"></script>
+    <script src="js/games-api-handler.js"></script>
+    <script src="js/profile-api-handler.js"></script>
+    <script src="js/search-api-handler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
