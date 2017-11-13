@@ -1,9 +1,0 @@
-{
-  "name": "cap-stone-one",
-  "version": "0.0.0",
-  "description": "CapStoneOne",
-  "main": "server.js",
-  "author": {
-    "name": "zackb"
-  }
-}

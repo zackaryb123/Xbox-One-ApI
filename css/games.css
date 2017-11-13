@@ -1,0 +1,14 @@
+﻿.album {
+    margin-top: 70px;
+}
+
+.games-page {
+    position: relative;
+}
+
+.games-page .card {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #343A40;
+    color: white;
+}

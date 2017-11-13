@@ -1,0 +1,116 @@
+﻿/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #9E9E9E;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #000000;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.imgcontainer,
+.creds-container {
+    text-align: center;
+    margin: 30px 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.avatar {
+    width: 100px;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 10px;
+}
+
+.cancelbtn,
+.login-btn,
+.register-btn {
+    color: #ffffff;
+    height: 15%;
+    border: 1px solid #29A145;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: #343a40;
+    border-radius: .3rem;
+    padding: 5px;
+}
+
+.cancelbtn {
+    margin: 0px 10px;
+}
+
+.register-btn {
+    float: right;
+    margin: 10px 10px 0px 0px;
+    padding: 5px;
+}
+.login-btn {
+    display: inline-block;
+}
+
+.creds-container > *,
+.cancelbtn {
+    margin-bottom: 5px;
+}
+
+.imgcontainer {
+    margin: 0px 5px 5px;
+}
+
+.creds-container label {
+    display: block;
+}
+
+#js-user-apikey {
+    margin-right: 30px;
+}
+
+#js-user-uxid {
+    margin-right: 45.1px;
+}
+
+.gamer-tag,
+.gamer-score, 
+.gamer-rep {
+    margin-bottom: 5px;
+    font-family: monospace;
+    font-size: 18px;
+}
