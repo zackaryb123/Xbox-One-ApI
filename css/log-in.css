@@ -50,7 +50,7 @@
 .imgcontainer,
 .creds-container {
     text-align: center;
-    margin: 30px 0px;
+    margin: 10px 0px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -92,7 +92,7 @@
 }
 
 .imgcontainer {
-    margin: 0px 5px 5px;
+    margin: 0px;
 }
 
 .creds-container label {
