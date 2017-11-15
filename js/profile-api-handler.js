@@ -19,7 +19,7 @@ function getDataFromClipsApi(callback, apiURL, gameId) {
 
 function RenderIframClip(iframe) {
     return `
-    <iframe
+    <iframe class="embed-responsive-item"
         src="${iframe}">
     </iframe>`;
 }

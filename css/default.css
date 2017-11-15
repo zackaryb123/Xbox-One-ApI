@@ -27,6 +27,14 @@ main {
     background-color: #343A40;
 }
 
+top-nav {
+    z-index: 0;
+}
+
+.fixed-top {
+   z-index: 1;
+}
+
 .navbar {
     position: fixed;
     margin-left: 120px;
@@ -74,7 +82,7 @@ main {
     height: 100%;
 }
 
-.log-in-btn {
+.profile-btn {
     position: absolute;
     bottom: 0px;
     width: 100%;

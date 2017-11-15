@@ -24,7 +24,7 @@
                         <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Clips</a>
                         <a class="nav-link" id="v-pills-games-tab" data-toggle="pill" href="#v-pills-games" role="tab" aria-controls="v-pills-games" aria-selected="false">Games</a>
                         <a class="nav-link" id="v-pills-store-tab" data-toggle="pill" href="#v-pills-store" role="tab" aria-controls="v-pills-store" aria-selected="false">Store</a>
-                        <button class="log-in-btn nav-link" onclick="document.getElementById('id01').style.display='block'">Login</button>
+                        <button class="profile-btn nav-link">Login</button>
                     </div>
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
@@ -53,6 +53,9 @@
 
     <section class="profile-page">
         <div class="col-game">
+            <div class="profile-game-header">
+                <span class="badge badge-secondary">Games</span>
+            </div>
             <div class="row profile-game-row">
                 <div class="js-profile-game-results">
 
@@ -82,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col-store">
-                    <div class="js-iframe-clip">
+                    <div class="js-iframe-clip embed-responsive embed-responsive-16by9">
 
                     </div>
                 </div>
@@ -130,6 +133,7 @@
     <div class="login-page">
         <div id="id01" class="modal">
             <form id="login-form" class="modal-content animate">
+                <button type="button" class="cancelbtn">X</button>
                 <div>
                     <a class="register-btn" href="https://xboxapi.com/register" target="_blank">Register</a>
                 </div>
@@ -141,6 +145,8 @@
                 </div>
 
                 <div class="creds-container">
+                    <p>User must have a Microsoft Account and Xbox live Account in order to use this application.</p>
+                    <p>Please register on the Xbox API web page to receiver your credentials</p>
                     <label><b>Xbox Uxid</b>
                         <input id="js-user-uxid" type="text" placeholder="XBOX Profile User ID" name="uname" required>
                     </label>
@@ -148,10 +154,9 @@
                     <label><b>API Key</b>
                         <input id="js-user-apikey" type="password" placeholder="Xbox API API Key" name="psw" required>
                     </label>
-
                     <button class="login-btn" type="submit">Login</button>
                 </div>
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button class="signout-btn" onclick="location.reload()" hidden>Sign Out</button>
             </form>
         </div>
     </div>

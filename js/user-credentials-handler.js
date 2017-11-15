@@ -22,7 +22,7 @@ function getCredsFromGameApi(apiURL, xuid, apikey) {
         type: 'GET',
         crossDomain: true,
         error: (err) => {
-            alert('Either API Key or Uxid incorrect! Try Again')
+            alert('Either API Key or Uxid incorrect! Try Again');
         },
         success: (res) => {
             USER_CREDS.UXID = xuid;
@@ -36,7 +36,10 @@ function getCredsFromGameApi(apiURL, xuid, apikey) {
             $('.gamer-tag').text(USER_CREDS.GAMER_TAG);
             $('.gamer-score').text(USER_CREDS.GAMER_SCORE);
             $('.gamer-rep').text(USER_CREDS.GAMER_REP);
-            $('.log-in-btn').text(USER_CREDS.GAMER_TAG);
+            $('.profile-btn').text(USER_CREDS.GAMER_TAG);
+
+            $('.creds-container').prop('hidden', true);
+            $('.signout-btn').prop('hidden', false);
 
             getDataFromStoreApi(displayStoreData, XBOX_STORE_URL, STORE_PAGE_COUNT);
             getDataFromGameApi(displayGameContent, USER_GAMES_URL);
@@ -61,4 +64,27 @@ function watchCredsSubmit() {
     });
 }
 
-$(watchCredsSubmit);
+function watchCloseBtn() {
+    $('.cancelbtn').on('click', event => {
+        if (USER_CREDS.API_KEY === '' || USER_CREDS.UXID === '')
+        {
+            alert('Sign in first!');
+            return;
+        }      
+        $('#id01').css('display', 'none');
+    });
+}
+
+function watchProfileBtn() {
+    $('.profile-btn').on('click', event => {
+        $('#id01').css('display', 'block');
+    });
+}
+
+function HandleLoginEvents() {
+    watchProfileBtn();
+    watchCloseBtn();
+    watchCredsSubmit();
+}
+
+$(HandleLoginEvents);
