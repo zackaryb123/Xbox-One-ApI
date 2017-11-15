@@ -5,6 +5,9 @@ Access users Xbox Live application and game content, including game clips, achie
 ## Getting Started
 
 Browse to this [link](https://zackaryb123.github.io/Xbox-One-ApI/) to access application.
+Must login to the Xbox Api first. Once your logged in, at the bottom left of your profile page you must sign in to your Xbox Live account.
+Enter or Copy and past your XboxAPI API Key and XBOX Profile User ID in the login page of the web application access content.
+
 
 ### Prerequisites
 
