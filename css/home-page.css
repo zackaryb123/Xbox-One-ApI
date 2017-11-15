@@ -226,3 +226,11 @@
 .collapse-card > div {
     border-radius: 0px;
 }
+
+#clips-msg {
+    padding-right: 50px;
+    position: fixed;
+    left: 37%;
+    top: 52%;
+    color: white;
+}
