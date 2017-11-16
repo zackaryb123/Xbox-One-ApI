@@ -2,7 +2,7 @@
 
 const EXAMPLE_DATA = {
     Gamertag: "pr0Xt0Xtype18",
-    GameDisplayPicRaw: "https://images-eds.xboxlive.com/image?url=z951ykn43p4FqWbbFvR2Ec.8vbDhj8G2Xe7JngaTToBrrCmIEEXHC9UNrdJ6P7KI4AAOijCgOA3.jozKovAH94oRvaqkZ2RL.OMqWWMP5tqcHE36EZlcPqK2ej.Y4TJy&format=png",
+    GameDisplayPicRaw: "http://images-eds.xboxlive.com/image?url=z951ykn43p4FqWbbFvR2Ec.8vbDhj8G2Xe7JngaTToBrrCmIEEXHC9UNrdJ6P7KI4AAOijCgOA3.jozKovAH94oRvaqkZ2RL.OMqWWMP5tqcHE36EZlcPqK2ej.Y4TJy&format=png",
     Gamerscore: 16984,
     XboxOneRep: "GoodPlayer",
     Game: [
