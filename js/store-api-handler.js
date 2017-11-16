@@ -9,10 +9,17 @@ const GAME_DETAILS = {
 }
 
 function getDataFromStoreApi(callback, apiUrl, page) {
+    let apikey = '';
+    if (USER_CREDS.API_KEY !== '') {
+        apikey = USER_CREDS.API_KEY;
+    } else {
+        apikey = '3f4f1234677cb8c21e729c00718e72102ead9c37';
+    }
+
     const settings = {
         url: apiUrl + page.toString(),
         headers: {
-            'X-AUTH': USER_CREDS.API_KEY,
+            'X-AUTH': apikey,
             'Content-Type': 'application/json'
         },
         dataType: 'json',
@@ -32,10 +39,16 @@ function getDataFromStoreApi(callback, apiUrl, page) {
 }
 
 function getDataFromGameSearchId(apiUrl, index) {
+    let apikey = '';
+    if (USER_CREDS.API_KEY !== '') {
+        apikey = USER_CREDS.API_KEY;
+    } else {
+        apikey = '3f4f1234677cb8c21e729c00718e72102ead9c37';
+    }
     const settings = {
         url: apiUrl + GAME_IDs[index].ID,
         headers: {
-            'X-AUTH': USER_CREDS.API_KEY,
+            'X-AUTH': apikey,
             'Content-Type': 'application/json'
         },
         dataType: 'json',
@@ -62,7 +75,7 @@ function renderStoreResults(result, index) {
                 <a id="${index}" class="game-details-btn" data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion${index}" aria-expanded="true" aria-controls="exampleAccordion${index}">
                   Description
                 </a>
-                <div id="exampleAccordion${index}" class="collapse show" role="tabpanel">
+                <div id="exampleAccordion${index}" class="collapse" role="tabpanel">
                   <p class="mb-3 ${index}">
                     
                   </p>
@@ -109,7 +122,7 @@ function watchPrevBtn() {
 }
 
 function handleStoreEvents() {
-    $(watchDetailsBtn);
+    $(watchDetailsBtn); //Glitchy and uses up a lot of HTTP request 
     $(watchPrevBtn);
     $(watchNextBtn);
 }

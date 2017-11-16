@@ -64,7 +64,8 @@
 .cancelbtn,
 .login-btn,
 .register-btn,
-.signout-btn {
+.signout-btn,
+.example-btn {
     color: #ffffff;
     border: 1px solid #29A145;
     text-shadow: 2px 2px 4px #000000;
@@ -74,15 +75,20 @@
 }
 
 .cancelbtn {
-    margin: 0px 10px;
+    margin: 10px;
     width: fit-content;
     position: absolute;
-    margin-top: 5px;
 }
 
+.example-btn {
+    width: fit-content;
+    position: absolute;
+    bottom: 0px;
+    margin: 10px;
+}
 .register-btn {
     float: right;
-    margin: 10px 10px 0px 0px;
+    margin: 10px;
     padding: 5px;
     height: 15%;
 }

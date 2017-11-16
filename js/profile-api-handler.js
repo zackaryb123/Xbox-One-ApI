@@ -24,6 +24,15 @@ function RenderIframClip(iframe) {
     </iframe>`;
 }
 
+function RenderLocolVideoClip(file) {
+    return `
+    <input type="file" accept="video/*"/>
+    <video controls autoplay>
+        <source src="${file}" type='video/mp4' />
+    </video>
+    `;
+}
+
 function RenderProfileGameClips(render, index) {
     return `
     <button class="play-clip-btn" id="${index}">
@@ -39,14 +48,26 @@ function RenderProfileGameClips(render, index) {
 }
 
 function DisplayProfileGameClips(display) {
-    let GameResults = display.map((item, index) =>
-        RenderProfileGameClips(item, index));
+    let GameResults = '';
+    if (USER_CREDS.API_KEY !== '') {
+        GameResults = display.map((item, index) =>
+            RenderProfileGameClips(item, index));
 
-    display.map((item, index) =>
-        STORE_GAME_CLIPS[index] = {
-            mp4: `${item.gameClipUris[0].uri}`
-        }
-    );
+        display.map((item, index) =>
+            STORE_GAME_CLIPS[index] = {
+                mp4: `${item.gameClipUris[0].uri}`
+            }
+        );
+    } else {
+        GameResults = EXAMPLE_DATA.Game[0].clips.map((item, index) =>
+            RenderProfileGameClips(item, index));
+
+        EXAMPLE_DATA.Game[0].clips.map((item, index) =>
+            STORE_GAME_CLIPS[index] = {
+                mp4: `${item.uri}`
+            }
+        );
+    }
 
     $('.js-profile-clips-results').html(GameResults);
 }
@@ -60,16 +81,26 @@ function watchProfileGameBtn() {
         const game_element = $(event.currentTarget).parent();
         const game_id = game_element.attr('id');
 
-        getDataFromClipsApi(DisplayProfileGameClips, USER_CLIPS_URL, game_id);
+        if (USER_CREDS.API_KEY !== '') {
+            getDataFromClipsApi(DisplayProfileGameClips, USER_CLIPS_URL, game_id);
+        } else {
+            DisplayProfileGameClips();
+        }
+
     });
 }
 
 function watchGameClipBtn() {
     $('.js-profile-clips-results').on('click', '.play-clip-btn', event => {
         event.preventDefault();
+        let iframeClip = '';
         const getClipBtnId = $(event.currentTarget).attr('id');
         const getClipUri = STORE_GAME_CLIPS[getClipBtnId].mp4;
-        const iframeClip = RenderIframClip(getClipUri);
+        if (USER_CREDS.API_KEY !== '') {
+            iframeClip = RenderIframClip(getClipUri);
+        } else {
+            iframeClip = RenderLocolVideoClip(getClipUri);
+        }
         $('.js-iframe-clip').html(iframeClip);
 
     });
