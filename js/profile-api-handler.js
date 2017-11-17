@@ -86,7 +86,7 @@ function watchProfileGameBtn() {
         } else {
             DisplayProfileGameClips();
         }
-
+        $('#collapseClips').addClass('show');
     });
 }
 

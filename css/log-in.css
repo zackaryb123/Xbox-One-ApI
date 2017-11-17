@@ -100,9 +100,8 @@
 }
 
 .signout-btn {
-    width: auto;
+    display: block;
     margin: 0px auto 0px auto;
-    height: auto;
 }
 
 .creds-container > *,
