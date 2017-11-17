@@ -19,6 +19,7 @@
     width: 100%;
     height: 100%;
     margin: 0px;
+    display: block;
 }
 
 /* Add Zoom Animation */
@@ -50,7 +51,6 @@
 .imgcontainer,
 .creds-container {
     text-align: center;
-    margin: 10px 0px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -76,21 +76,23 @@
 
 .cancelbtn {
     margin: 10px;
-    width: fit-content;
+    width: auto;
     position: absolute;
 }
 
 .example-btn {
-    width: fit-content;
+    width: auto;
     position: absolute;
     bottom: 0px;
     margin: 10px;
 }
 .register-btn {
-    float: right;
+    position: absolute;
     margin: 10px;
     padding: 5px;
-    height: 15%;
+    right: 0px;
+    position: absolute;
+    height: auto;
 }
 .login-btn {
     display: inline-block;
@@ -98,9 +100,9 @@
 }
 
 .signout-btn {
-    width: fit-content;
+    width: auto;
     margin: 0px auto 0px auto;
-    height: fit-content;
+    height: auto;
 }
 
 .creds-container > *,
