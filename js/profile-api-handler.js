@@ -47,7 +47,7 @@ function RenderProfileGameClips(render, index) {
     </button>`;
 }
 
-function DisplayProfileGameClips(display) {
+function DisplayProfileGameClips(display, id) {
     let GameResults = '';
     if (USER_CREDS.API_KEY !== '') {
         GameResults = display.map((item, index) =>
@@ -59,10 +59,19 @@ function DisplayProfileGameClips(display) {
             }
         );
     } else {
-        GameResults = EXAMPLE_DATA.Game[0].clips.map((item, index) =>
+        let id_index = 0;
+        if (id == '545844082') {
+            id_index = 0;
+        } else if (id == '558797228') {
+            id_index = 1;
+        } else if (id == '972249091') {
+            id_index = 2;
+        }
+
+        GameResults = EXAMPLE_DATA.Game[id_index].clips.map((item, index) =>
             RenderProfileGameClips(item, index));
 
-        EXAMPLE_DATA.Game[0].clips.map((item, index) =>
+        EXAMPLE_DATA.Game[id_index].clips.map((item, index) =>
             STORE_GAME_CLIPS[index] = {
                 mp4: `${item.uri}`
             }
@@ -84,7 +93,7 @@ function watchProfileGameBtn() {
         if (USER_CREDS.API_KEY !== '') {
             getDataFromClipsApi(DisplayProfileGameClips, USER_CLIPS_URL, game_id);
         } else {
-            DisplayProfileGameClips();
+            DisplayProfileGameClips(null, game_id);
         }
         $('#collapseClips').addClass('show');
     });
@@ -101,6 +110,7 @@ function watchGameClipBtn() {
         } else {
             iframeClip = RenderLocolVideoClip(getClipUri);
         }
+        $('#collapseClips').removeClass('show');
         $('.js-iframe-clip').html(iframeClip);
 
     });

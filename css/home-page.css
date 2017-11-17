@@ -17,6 +17,7 @@
     height: 100%;
     position: relative;
     background-color: black;
+    overflow-y: scroll;
 }
 
 .profile-game-header {

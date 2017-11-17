@@ -13,42 +13,120 @@ const EXAMPLE_DATA = {
                 {
                     dateRecorded: "2017-11-14 02:14:47",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip1.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip1.mp4"
                 },
                 {
-                    dateRecorded: "2017-11 - 14 01: 59:00",
+                    dateRecorded: "2017-11-14 01:59:00",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip2.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip2.mp4"
                 },
                 {
-                    dateRecorded: "2017-11 - 14 01: 56:42",
+                    dateRecorded: "2017-11-14 01:56:42",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip3.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip3.mp4"
                 },
                 {
-                    dateRecorded: "2017-11 - 13 05: 08:15",
+                    dateRecorded: "2017-11-13 05:08:15",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip4.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip4.mp4"
                 },
                 {
-                    dateRecorded: "2017-11 - 13 05: 08:31",
+                    dateRecorded: "2017-11-13 05:08:31",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip5.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip5.mp4"
                 },
                 {
-                    dateRecorded: "2017-11 - 09 02: 01:11",
+                    dateRecorded: "2017-11-09 02:01:11",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip6.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip6.mp4"
                 },
                 {
-                    dateRecorded: "2017-11 - 09 02: 01:05",
+                    dateRecorded: "2017-11-09 02:01:05",
                     titleName: "Call of Duty®: WWII",
-                    uri: "iframes/Clip7.mp4"
+                    uri: "iframes/CallofDutyWIII/Clip7.mp4"
                 }
             ],
             earnedAchievements: 2,
             currentGamerscore: 15,
             maxGamerscore: 1000
+        },
+        {
+            name: "Rocket League®",
+            titleId: 558797228,
+            clips: [
+                {
+                    dateRecorded: "2017-07-01 02:10:18",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip1.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-27 06:36:40",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip2.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-10 22:27:01",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip3.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-10 21:42:34",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip4.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-10 21:09:34",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip5.mp4"
+                },
+                {
+                    dateRecorded: "2017-05-16 02:37:08",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip6.mp4"
+                },
+                {
+                    dateRecorded: "2017-05-05 03:44:45",
+                    titleName: "Rocket League®",
+                    uri: "iframes/RocketLeague/Clip7.mp4"
+                }
+            ],
+            earnedAchievements: 37,
+            currentGamerscore: 830,
+            maxGamerscore: 1950
+        },
+        {
+            name: "Grand Theft Auto V",
+            titleId: 972249091,
+            clips: [
+                {
+                    dateRecorded: "2017-08-02 01:42:32",
+                    titleName: "Grand Theft Auto V",
+                    uri: "iframes/GrandTheftAutoV/Clip1.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-27 06:36:40",
+                    titleName: "Grand Theft Auto V",
+                    uri: "iframes/GrandTheftAutoV/Clip2.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-10 22:27:01",
+                    titleName: "Grand Theft Auto V",
+                    uri: "iframes/GrandTheftAutoV/Clip3.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-10 21:42:34",
+                    titleName: "Grand Theft Auto V",
+                    uri: "iframes/GrandTheftAutoV/Clip4.mp4"
+                },
+                {
+                    dateRecorded: "2017-06-10 21:09:34",
+                    titleName: "Grand Theft Auto V",
+                    uri: "iframes/GrandTheftAutoV/Clip5.mp4"
+                }
+            ],
+            earnedAchievements: 17,
+            currentGamerscore: 270,
+            maxGamerscore: 1500
         }
     ]
 };
@@ -64,10 +142,16 @@ function watchExampleBtn() {
         $('.creds-container').prop('hidden', true);
         $('.signout-btn').prop('hidden', false);
 
-        let ProfileGameResults = renderGameResultsOnProfile(EXAMPLE_DATA.Game[0], 1)
-        $('.js-profile-game-results').html(ProfileGameResults);
+        let ProfileGameResults = '';
+        let GameResults = '';
+        for (let i = 0; i < EXAMPLE_DATA.Game.length; i++) {
+            ProfileGameResults += renderGameResultsOnProfile(EXAMPLE_DATA.Game[i], i+1)
+            //$('.js-profile-game-results').html(ProfileGameResults);
 
-        let GameResults = renderGameResults(EXAMPLE_DATA.Game[0], 1);
+            GameResults += renderGameResults(EXAMPLE_DATA.Game[i], i+1);
+            //$('.js-game-results').html(GameResults);
+        }
+        $('.js-profile-game-results').html(ProfileGameResults);
         $('.js-game-results').html(GameResults);
 
         let staticStoreResults = getStaticStoreGamesForExample();
