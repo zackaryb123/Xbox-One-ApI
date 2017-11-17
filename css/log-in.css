@@ -109,9 +109,10 @@
     margin-bottom: 20px;
 }
 
-.creds-container > p {
+#login-form > p {
     font-weight: bold;
     color: #333333;
+    text-align: center;
 }
 
 .imgcontainer {
