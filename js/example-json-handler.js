@@ -7,6 +7,7 @@ const EXAMPLE_DATA = {
     XboxOneRep: "GoodPlayer",
     Game: [
         {
+            img: "https://pbs.twimg.com/media/C-i66tNXUAAGzYa.jpg:large",
             name: "Call of Duty WWII",
             titleId: 545844082,
             clips: [
@@ -51,6 +52,7 @@ const EXAMPLE_DATA = {
             maxGamerscore: 1000
         },
         {
+            img: "https://rocketleague.media.zestyio.com/boxart_comp1.f1cb27a519bdb5b6ed34049a5b86e317.jpg",
             name: "Rocket League®",
             titleId: 558797228,
             clips: [
@@ -95,6 +97,7 @@ const EXAMPLE_DATA = {
             maxGamerscore: 1950
         },
         {
+            img: "https://www.rockstargames.com/V/img/global/order/mobile-cover.jpg",
             name: "Grand Theft Auto V",
             titleId: 972249091,
             clips: [
@@ -146,10 +149,7 @@ function watchExampleBtn() {
         let GameResults = '';
         for (let i = 0; i < EXAMPLE_DATA.Game.length; i++) {
             ProfileGameResults += renderGameResultsOnProfile(EXAMPLE_DATA.Game[i], i+1)
-            //$('.js-profile-game-results').html(ProfileGameResults);
-
             GameResults += renderGameResults(EXAMPLE_DATA.Game[i], i+1);
-            //$('.js-game-results').html(GameResults);
         }
         $('.js-profile-game-results').html(ProfileGameResults);
         $('.js-game-results').html(GameResults);

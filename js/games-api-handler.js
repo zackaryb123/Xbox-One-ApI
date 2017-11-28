@@ -16,26 +16,19 @@ function getDataFromGameApi(callback, apiURL) {
 }
 
 function renderGameResults(render, index) {
+    if (USER_CREDS.API_KEY !== '') { render.img = "images/logo-img.png" }
     return `
-    <div id="accordion-game-${render.titleId}" role="tablist">
-      <div class="card">
-        <div class="card-header" role="tab" id="heading-game-${render.titleId}">
-          <h5 class="mb-0">
-            <a data-toggle="collapse" href="#index-${index}" aria-expanded="true" aria-controls="collapse-game-${render.titleId}">
-              ${render.name}
-            </a>
-          </h5>
-        </div>
-
-        <div id="index-${index}" class="collapse" role="tabpanel" aria-labelledby="heading-game-${render.titleId}" data-parent="#accordion-game-${render.titleId}">
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="${render.img}" alt="Card image cap" height="318" width="318">
+        <div class="card-body">
+          <h4 class="card-title">${render.name}</h4>
           <div class="card-body">
             <p class="card-text">Earned Achievements: ${render.earnedAchievements}</p>
             <p class="card-text">Current Gamerscore: ${render.currentGamerscore}</p>
             <p class="card-text">Max Gamerscore: ${render.maxGamerscore}</p>
           </div>
         </div>
-      </div>
-    </div>`;
+   </div>`;
 }
 
 function renderGameResultsOnProfile(render, index) {
